@@ -7,7 +7,8 @@ const Content = () => {
       <div className="container mx-auto">
         <h2 className="text-3xl font-semibold text-center mb-4">Featured Products</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {/* Featured Product 1 */}
+       
+       
           <div className="bg-white p-4 rounded-lg shadow-md">
             <img src="https://plus.unsplash.com/premium_photo-1684407617236-c60dc693293a?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D" alt="Product" className="w-full h-48 object-cover mb-4 rounded-md" />
             <h3 className="text-xl font-semibold mb-2">Mesoroller and cream on a purple background flat lay</h3>
@@ -18,7 +19,7 @@ const Content = () => {
             </div>
           </div>
 
-          {/* Featured Product 2 */}
+          
           <div className="bg-white p-4 rounded-lg shadow-md">
             <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D" alt="Product" className="w-full h-48 object-cover mb-4 rounded-md" />
             <h3 className="text-xl font-semibold mb-2">HeadPhones</h3>
@@ -40,7 +41,7 @@ const Content = () => {
             </div>
           </div>
 
-          {/* Featured Product 4 */}
+      
           <div className="bg-white p-4 rounded-lg shadow-md">
             <img src="https://plus.unsplash.com/premium_photo-1677541367608-7283ec1b3a2b?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OXx8cHJvZHVjdHxlbnwwfHwwfHx8MA%3D%3D" alt="Product" className="w-full h-48 object-cover mb-4 rounded-md" />
             <h3 className="text-xl font-semibold mb-2">Glossy Lipstick</h3>

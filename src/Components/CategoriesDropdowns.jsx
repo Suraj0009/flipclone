@@ -65,7 +65,7 @@ const CategoriesDropdowns = () => {
     { name: "Electronics", image: "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZWxlY3Ryb25pY3N8ZW58MHx8MHx8fDA%3D", options: ["Laptops", "Cameras", "Headphones"] },
     { name: "Home furniture", image: "https://images.unsplash.com/photo-1560617544-b4f287789e24?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", options: ["Smartphones", "Accessories", "Tablets"] },
     { name: "travel", image: "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1440&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", options: ["Clothing", "Footwear", "Accessories"] },
-    { name: "", image: "https://images.unsplash.com/photo-1526738549149-8e07eca6c147?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8ZWxlY3Ryb25pY3N8ZW58MHx8MHx8fDA%3D", options: ["Laptops", "Cameras", "Headphones"] },
+
   ];
 
   return (
