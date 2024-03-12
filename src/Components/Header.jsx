@@ -35,6 +35,7 @@ const Header = () => {
                 <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"> <UserCircle/>Profile</a>
                 <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"><Boxes/>Orders</a>
                 <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"><Heart/>WishList</a>
+                <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"><Logout/>WishList</a>
               </div>
             )}
           </div>
