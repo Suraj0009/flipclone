@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ChevronDown } from 'lucide-react';
 
 const CategoryButton = ({ category, image, onClick, onMouseEnter, onMouseLeave }) => (
@@ -8,23 +9,39 @@ const CategoryButton = ({ category, image, onClick, onMouseEnter, onMouseLeave }
     onMouseEnter={onMouseEnter}
     onMouseLeave={onMouseLeave}
   >
-    <img src={image} alt={category} className="h-10 w-10 rounded-md mr-2 object-cover" />
+    <img src={image} alt={category}  className="h-10 w-10 rounded-md mr-2 object-cover" />
     {category}
     <ChevronDown className="text-black group-hover:text-white" />
   </button>
 );
 
-const DropdownOptions = ({ options, isOpen, onMouseEnter, onMouseLeave }) => (
-  <div 
-    className={isOpen ? "absolute bg-white shadow-md mt-2 py-2 rounded-md w-48 z-10" : "hidden"}
-    onMouseEnter={onMouseEnter}
-    onMouseLeave={onMouseLeave}
-  >
-    {options.map((option, index) => (
-      <button key={index} className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200 focus:outline-none">{option}</button>
-    ))}
-  </div>
-);
+const DropdownOptions = ({ options, isOpen, onMouseEnter, onMouseLeave }) => {
+  const navigate = useNavigate();
+
+  const handleOptionClick = (option) => {
+   
+    navigate('/products');
+  
+  };
+
+  return (
+    <div 
+      className={isOpen ? "absolute bg-white shadow-md mt-2 py-2 rounded-md w-48 z-10" : "hidden"}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {options.map((option, index) => (
+        <button 
+          key={index} 
+          className="block w-full text-left px-4 py-2 text-gray-800 hover:bg-gray-200 focus:outline-none"
+          onClick={() => handleOptionClick(option)}
+        >
+          {option}
+        </button>
+      ))}
+    </div>
+  );
+};
 
 const CategoriesDropdown = ({ category, image, options }) => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);

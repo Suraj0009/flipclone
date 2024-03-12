@@ -25,7 +25,7 @@ function LoginForm() {
 
       if (response.ok) {
         // Redirect user to the home page upon successful login
-        window.location.href = '/home'; // Use window.location.href to navigate
+        window.location.href = '/'; // Use window.location.href to navigate
       } else {
         const errorData = await response.json();
         setError(errorData.message);

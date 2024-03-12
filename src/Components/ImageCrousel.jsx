@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom'; 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const ImageCarousel = ({ images, autoPlayInterval = 5000 }) => {
@@ -23,11 +24,13 @@ const ImageCarousel = ({ images, autoPlayInterval = 5000 }) => {
 
   return (
     <div className="relative w-full mt-4 h-[300px] sm:h-[400px] overflow-hidden flex items-center">
-      <img
-        src={images[currentImageIndex].url}
-        alt="carousel-image"
-        className="w-full h-full object-cover transition-opacity duration-500"
-      />
+      <Link to="/products"> 
+        <img
+          src={images[currentImageIndex].url}
+          alt="carousel-image"
+          className="w-full h-full object-cover transition-opacity duration-500"
+        />
+      </Link>
       <button
         className="absolute shadow-xl left-0 top-1/2 transform -translate-y-1/2 h-2/4 w-12 bg-white text-slate-500 hover:bg-opacity-75 focus:outline-none"
         onClick={goToPreviousImage}

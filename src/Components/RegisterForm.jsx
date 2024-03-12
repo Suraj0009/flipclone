@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import registerImage from '../images/jonas-lee-o6elTKWZ5bI-unsplash.jpg'; 
 
 function RegisterForm() {
   const [username, setUsername] = useState('');
@@ -32,46 +33,56 @@ function RegisterForm() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Register</h2>
+    <div className="min-h-screen flex items-center justify-center bg-gray-100 py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full bg-white rounded-lg shadow-lg overflow-hidden md:flex">
+        <div className="md:w-1/2 p-4 md:p-8">
+          <h2 className="text-3xl font-bold text-gray-800 mb-4">Create an Account</h2>
+          <form className="space-y-4" onSubmit={handleSubmit}>
+            <div>
+              <input
+                id="username"
+                name="username"
+                type="text"
+                autoComplete="username"
+                required
+                className="w-full px-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                placeholder="Username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+            <div>
+              <input
+                id="password"
+                name="password"
+                type="password"
+                autoComplete="current-password"
+                required
+                className="w-full px-4 py-2 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                placeholder="Password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+            </div>
+            <div>
+              <button
+                type="submit"
+                className="w-full bg-indigo-500 hover:bg-indigo-600 text-white py-2 rounded-lg shadow-lg focus:outline-none focus:ring-2 focus:ring-indigo-400"
+              >
+                Create Account
+              </button>
+            </div>
+          </form>
+          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {success && <p className="text-green-500 text-sm">User registered successfully</p>}
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-          <div className="rounded-md shadow-sm -space-y-px">
-            <div>
-              <label htmlFor="username" className="sr-only">Username</label>
-              <input id="username" name="username" type="text" autoComplete="username" required 
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
-                placeholder="Username" 
-                value={username} 
-                onChange={(e) => setUsername(e.target.value)} />
-            </div>
-            <div>
-              <label htmlFor="password" className="sr-only">Password</label>
-              <input id="password" name="password" type="password" autoComplete="current-password" required 
-                className="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
-                placeholder="Password" 
-                value={password} 
-                onChange={(e) => setPassword(e.target.value)} />
-            </div>
+        <div className="md:w-1/2 relative hidden md:block">
+          <img src={registerImage} alt="Registration" className="object-cover w-full h-full" />
+          <div className="absolute inset-0 bg-black opacity-25"></div>
+          <div className="absolute inset-0 flex items-center justify-center text-white font-bold text-2xl">
+            <p>Join Us Now!</p>
           </div>
-
-          <div>
-            <button type="submit" className="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-              <span className="absolute left-0 inset-y-0 flex items-center pl-3">
-                {/* <!-- Heroicon name: solid/lock-closed --> */}
-                <svg className="h-5 w-5 text-indigo-500 group-hover:text-indigo-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fillRule="evenodd" d="M10 12a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
-                  <path d="M5 7a1 1 0 011-1h8a1 1 0 110 2H6a1 1 0 01-1-1zM4 10a1 1 0 011-1h10a1 1 0 110 2H5a1 1 0 01-1-1zM7 15a1 1 0 00-1 1v1a2 2 0 002 2h4a2 2 0 002-2v-1a1 1 0 00-1-1H7z" />
-                </svg>
-              </span>
-              Register
-            </button>
-          </div>
-        </form>
-        {error && <p style={{ color: 'red' }}>{error}</p>}
-        {success && <p style={{ color: 'green' }}>User registered successfully</p>}
+        </div>
       </div>
     </div>
   );

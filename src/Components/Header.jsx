@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
-import { UserCircle, ChevronDown, Boxes, Heart, ShoppingCart, ShoppingBasket, Search } from 'lucide-react';
+import { UserCircle, ChevronDown, Boxes, Heart, ShoppingCart, Search ,LogOut} from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
+  const navigate = useNavigate(); 
+
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -10,6 +13,16 @@ const Header = () => {
 
   const closeDropdown = () => {
     setIsDropdownOpen(false);
+  };
+
+  const handleLogout = () => {
+    
+    navigate('/login');
+  };
+
+  const handleSignUp = () => {
+    
+    navigate('/register');
   };
 
   return (
@@ -31,11 +44,11 @@ const Header = () => {
             <UserCircle />Login<ChevronDown className={isDropdownOpen ? 'visible' : 'invisible'} />
             {isDropdownOpen && (
               <div className="absolute bg-white shadow-md overflow-hidden mt-8 left-0  w-48 rounded-lg z-10" onMouseLeave={closeDropdown}>
-                <a href="#" className="flex gap-2 px-4 py-2 border-b border-slate-400 text-sm text-gray-800 hover:bg-gray-200">New Customer ? <span className='text-blue-500'>Sign Up</span></a>
+                <a href="#" className="flex gap-2 px-4 py-2 border-b border-slate-400 text-sm text-gray-800 hover:bg-gray-200">New Customer ? <span className='text-blue-500' onClick={handleSignUp}>Sign Up</span></a>
                 <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"> <UserCircle/>Profile</a>
                 <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"><Boxes/>Orders</a>
                 <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"><Heart/>WishList</a>
-                <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"><Logout/>WishList</a>
+                <button onClick={handleLogout} className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"><LogOut/>Logout</button>
               </div>
             )}
           </div>

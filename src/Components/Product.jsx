@@ -1,13 +1,22 @@
 import React from 'react';
 
 function Product({ product }) {
+  
+  const getImageUrl = () => {
+    if (product.images && product.images.length > 0 && product.images[0].url) {
+      return product.images[0].url; 
+    } else {
+      return 'https://media.istockphoto.com/id/1471521270/photo/a-female-hand-and-a-shopping-cart-icon-concept-of-starting-a-sale-online-shopping-increasing.jpg?s=1024x1024&w=is&k=20&c=mPPNMkRW8J3kToKjBoPSPZeyVQlKvjQGB744X2wPVcA='; // Return a dummy image URL if not available
+    }
+  };
+
   return (
     <div className="border p-4 rounded-lg shadow-md">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <div>
-          <img src={product.images[0].url} alt={product.name} className="h-60 w-full object-cover mb-2" />
+          <img src={getImageUrl()} alt={product.name} className="h-60 w-full object-cover mb-2" />
           <div className="flex gap-2">
-            {product.images.slice(1).map((image, index) => (
+            {product.images && product.images.slice(1).map((image, index) => (
               <img key={index} src={image.url} alt={product.name} className="h-20 w-20 object-cover" />
             ))}
           </div>

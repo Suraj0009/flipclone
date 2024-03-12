@@ -27,7 +27,7 @@ const App = () => {
       <Routes>
         <Route path="/register" element={<RegisterForm />} />
         <Route path="/login" element={<LoginForm />} />
-        <Route path="/home" element={<HomePage images={images} />} />
+        <Route path="/" element={<HomePage images={images} />} />
         <Route path="/shop" element={<ShopL />} /> {/* Add the route for ShopListing */}
         <Route path="/products" element={<Products />} />
       </Routes>
