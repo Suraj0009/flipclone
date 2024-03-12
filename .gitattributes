@@ -1,0 +1,2 @@
+src/images/Postman-Agent-win64-0.4.23-Setup.exe filter=lfs diff=lfs merge=lfs -text
+src/images/Postman-win64-Setup.exe filter=lfs diff=lfs merge=lfs -text
