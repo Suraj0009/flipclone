@@ -8,6 +8,10 @@ const Header = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
 
+  const closeDropdown = () => {
+    setIsDropdownOpen(false);
+  };
+
   return (
     <header className="bg-white text-black py-4">
       <div className="container mx-auto flex items-center justify-between">
@@ -19,17 +23,21 @@ const Header = () => {
           <Search className='absolute top-1 left-2 cursor-pointer'/>
         </div>
         <div className="relative flex">
-          <a href="#" className="flex gap-2 group transition duration-300 hover:bg-blue-500 hover:text-white mr-4 py-2 rounded-xl px-2" onMouseEnter={toggleDropdown} onMouseLeave={toggleDropdown}>
+          <div
+            className="group flex gap-2 transition duration-300 hover:bg-blue-500 hover:text-white mr-4 py-2 rounded-xl px-2"
+            onMouseEnter={toggleDropdown}
+            onMouseLeave={closeDropdown} 
+          >
             <UserCircle />Login<ChevronDown className={isDropdownOpen ? 'visible' : 'invisible'} />
             {isDropdownOpen && (
-              <div className="absolute bg-white shadow-md overflow-hidden mt-8 left-0  w-48 rounded-lg z-10">
-                <a href="#" className=" flex gap-2 px-4 py-2 border-b border-slate-400 text-sm text-gray-800 hover:bg-gray-200">New Customer ? <span className='text-blue-500'>Sign Up</span></a>
-                <a href="#" className=" flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"> <UserCircle/>Profile</a>
-                <a href="#" className=" px-4 py-2 flex gap-2 text-sm text-gray-800 hover:bg-gray-200"><Boxes/>Orders</a>
-                <a href="#" className=" flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"><Heart/>WishList</a>
+              <div className="absolute bg-white shadow-md overflow-hidden mt-8 left-0  w-48 rounded-lg z-10" onMouseLeave={closeDropdown}>
+                <a href="#" className="flex gap-2 px-4 py-2 border-b border-slate-400 text-sm text-gray-800 hover:bg-gray-200">New Customer ? <span className='text-blue-500'>Sign Up</span></a>
+                <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"> <UserCircle/>Profile</a>
+                <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"><Boxes/>Orders</a>
+                <a href="#" className="flex gap-2 px-4 py-2 text-sm text-gray-800 hover:bg-gray-200"><Heart/>WishList</a>
               </div>
             )}
-          </a>
+          </div>
           <a href="#" className="mr-4 flex gap-2 hover:text-gray-600 py-2 px-2"><ShoppingCart/>Cart</a>
     
           <button className="lg:hidden focus:outline-none">

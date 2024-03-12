@@ -7,7 +7,7 @@ const ImageCarousel = ({ images, autoPlayInterval = 5000 }) => {
   useEffect(() => {
     const intervalId = setInterval(goToNextImage, autoPlayInterval);
     return () => clearInterval(intervalId);
-  }, [currentImageIndex]); // Restart interval when currentImageIndex changes
+  }, [currentImageIndex]); 
 
   const goToPreviousImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
